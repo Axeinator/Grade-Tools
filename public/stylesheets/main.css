@@ -8,3 +8,14 @@ body {
 .col {
     margin: 0 auto;
 }
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
