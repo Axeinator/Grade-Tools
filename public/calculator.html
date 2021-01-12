@@ -7,17 +7,24 @@
     <script src="./scripts/calculator.js"></script>
 </head>
 <body>
-    <form name="grades">
-        <label for="c1">Cycle 1</label>
-        <input type="number" id="c1" class="form-control-lg"><br>
-        <label for="c2">Cycle 2</label>
-        <input type="number" id="c2" class="form-control-lg"><br>
-        <label for="c3">Cycle 3</label>
-        <input type="number" id="c3" class="form-control-lg"><br>
-        <label for="goal">Goal</label>
-        <input type="number" id="goal" class="form-control-lg">
-    </form>
-    <h3 id="requiredScore"></h3>
-    <button onclick="wAvg()">Submit</button>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <form name="grades">
+                <label for="c1">Cycle 1</label>
+                <input type="number" id="c1" class="form-control-lg"><br>
+                <label for="c2">Cycle 2</label>
+                <input type="number" id="c2" class="form-control-lg"><br>
+                <label for="c3">Cycle 3</label>
+                <input type="number" id="c3" class="form-control-lg"><br>
+                <label for="goal">Goal</label>
+                <input type="number" id="goal" class="form-control-lg">
+            </form>
+            <h3 id="requiredScore"></h3>
+        </div>
+    </div>
+    <button onclick="wAvg()" class="btn btn-primary btn-lg">Submit</button>
+</div>
+
 </body>
 </html>
