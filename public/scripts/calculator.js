@@ -1,12 +1,12 @@
 function wAvg() {
-  c1 = document.forms.grades.c1.valueAsNumber
-  c2 = document.forms.grades.c2.valueAsNumber
-  c3 = document.forms.grades.c3.valueAsNumber
-  goal = document.forms.grades.goal.valueAsNumber
-  required = ((goal - ((c1 * 0.3) + (c2 * 0.3) + (c3 * 0.3)))/0.1)
-  console.log(required)
+  let c1 = document.forms.grades.c1.valueAsNumber
+  let c2 = document.forms.grades.c2.valueAsNumber
+  let c3 = document.forms.grades.c3.valueAsNumber
+  let goal = document.forms.grades.goal.valueAsNumber
+  let cWeight = document.forms.grades.cWeight.valueAsNumber
+  let fWeight = document.forms.grades.fWeight.valueAsNumber
+  let required = ((goal - ((c1 * cWeight) + (c2 * cWeight) + (c3 * cWeight)))/fWeight)
   if (required < 0) {
-    console.log("inside")
     document.getElementById('requiredScore').innerHTML = `Your required final exam score is 0%`
   }
   else if (required > 100) {

@@ -9,13 +9,17 @@ body {
     margin: 0 auto;
 }
 .footer {
-    position: fixed;
+    position: relative;
     left: 0;
-    bottom: 50px;
+    bottom: -10px;
     width: 100%;
     text-align: center;
 }
 h1 {
     text-align: center;
     margin-bottom: 30px;
+}
+
+h3 {
+    margin: 20px;
 }
