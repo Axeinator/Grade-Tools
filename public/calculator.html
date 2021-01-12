@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Final Calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="./scripts/calculator.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="stylesheets/main.css" rel="stylesheet">
+    <script src="scripts/calculator.js"></script>
 </head>
 <body>
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-4">
-            <form name="grades">
-                <label for="c1">Cycle 1</label>
-                <input type="number" id="c1" class="form-control-lg"><br>
-                <label for="c2">Cycle 2</label>
-                <input type="number" id="c2" class="form-control-lg"><br>
-                <label for="c3">Cycle 3</label>
-                <input type="number" id="c3" class="form-control-lg"><br>
-                <label for="goal">Goal</label>
-                <input type="number" id="goal" class="form-control-lg">
-            </form>
-            <h3 id="requiredScore"></h3>
-        </div>
+    <div class="d-flex justify-content-center">
+        <form name="grades">
+            <label for="c1">Cycle 1</label><br>
+            <input type="number" id="c1" class="form-control-lg"><br>
+            <label for="c2">Cycle 2</label><br>
+            <input type="number" id="c2" class="form-control-lg"><br>
+            <label for="c3">Cycle 3</label><br>
+            <input type="number" id="c3" class="form-control-lg"><br>
+            <label for="goal">Goal</label><br>
+            <input type="number" id="goal" class="form-control-lg"><br>
+        </form>
     </div>
-    <button onclick="wAvg()" class="btn btn-primary btn-lg">Submit</button>
+    <div class="col text-center">
+        <button onclick="wAvg()" class="btn btn-primary btn-lg">Submit</button>
+    </div>
+    <h3 id="requiredScore" class="text-center"></h3><br>
 </div>
 
 </body>
