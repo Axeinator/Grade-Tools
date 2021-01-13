@@ -17,24 +17,19 @@
     <h4 style="float: left; margin-left: 75px;">Points Possible</h4>
 </div>
 <form id="grades">
-    <input name="earnedgrade1">
-    <input name="possiblegrade1"><br>
-    <input name="earnedGrade2">
-    <input name="possiblegrade2"><br>
+    <input name="earnedgrade">
+    <input name="possiblegrade"><br>
+    <input name="earnedGrade">
+    <input name="possiblegrade"><br>
 </form>
 <button onclick="insertGrade()">Add Assignment</button>
 <button onclick="currentGrade()">Calculate Grade</button>
 <h4 id="currentGrade"></h4>
 </body>
 <script>
-  var gradeNum = 3
-
   function insertGrade() {
-    let earnName = `<input name="earnedgrade${gradeNum}">`
-    let possName = `<input name="possiblegrade${gradeNum}">`
-    $('#grades').append(earnName + '\n')
-    $('#grades').append(possName + '<br>')
-    gradeNum++
+    $('#grades').append("<input name=\"earnedgrade\">" + '\n')
+    $('#grades').append("<input name=\"possiblegrade}\">" + '<br>')
   }
 </script>
 </html>
