@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="stylesheets/main.css" rel="stylesheet">
     <script src="scripts/calculator.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
             integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
             crossorigin="anonymous"></script>
 </head>
 <body>
+<div style="overflow: hidden;">
+    <h4 style="float: left">Points Earned</h4>
+    <h4 style="float: left; margin-left: 75px;">Points Possible</h4>
+</div>
 <form id="grades">
     <input name="earnedgrade1">
     <input name="possiblegrade1"><br>
@@ -16,16 +23,18 @@
     <input name="possiblegrade2"><br>
 </form>
 <button onclick="insertGrade()">Add Assignment</button>
+<button onclick="currentGrade()">Calculate Grade</button>
 <h4 id="currentGrade"></h4>
 </body>
 <script>
-    var gradeNum = 3
-    function insertGrade() {
-      let earnName = `<input name="earnedgrade${gradeNum}">`
-      let possName = `<input name="possiblegrade${gradeNum}">`
-      $('#grades').append(earnName)
-      $('#grades').append(possName + '<br>')
-      gradeNum++
-    }
+  var gradeNum = 3
+
+  function insertGrade() {
+    let earnName = `<input name="earnedgrade${gradeNum}">`
+    let possName = `<input name="possiblegrade${gradeNum}">`
+    $('#grades').append(earnName + '\n')
+    $('#grades').append(possName + '<br>')
+    gradeNum++
+  }
 </script>
 </html>
