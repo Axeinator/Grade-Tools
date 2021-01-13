@@ -17,3 +17,20 @@ function wAvg() {
     document.getElementById('requiredScore').innerHTML = `Your required final exam score is ${required.toFixed(2)}%`
   }
 }
+
+function currentGrade() {
+  let grades = $('#grades').serializeArray()
+  let totalEarned = 0
+  let totalPossible = 0
+  grades.forEach((grade) => {
+    if (grade.name.includes('earned')) {
+      totalEarned += parseFloat(grade.value) || 0
+    }
+    else if (grade.name.includes('possible')) {
+      totalPossible += parseFloat(grade.value) || 0
+    }
+  })
+  let currentGrade = (totalEarned/totalPossible)*100
+  $('#currentGrade').text(`Your current grade is ${currentGrade.toFixed(2)}%`)
+}
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="scripts/calculator.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<form id="grades">
+    <input name="earnedgrade1">
+    <input name="possiblegrade1"><br>
+    <input name="earnedGrade2">
+    <input name="possiblegrade2"><br>
+</form>
+<button onclick="insertGrade()">Add Assignment</button>
+<h4 id="currentGrade"></h4>
+</body>
+<script>
+    var gradeNum = 3
+    function insertGrade() {
+      let earnName = `<input name="earnedgrade${gradeNum}">`
+      let possName = `<input name="possiblegrade${gradeNum}">`
+      $('#grades').append(earnName)
+      $('#grades').append(possName + '<br>')
+      gradeNum++
+    }
+</script>
+</html>
