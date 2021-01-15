@@ -12,4 +12,8 @@ app.get('/whatif', ((req, res) => {
   res.sendFile(path.join(__dirname + '/public/whatif.html'))
 }))
 
+app.get('/gpa', (req, res) => {
+  res.sendFile(path.join(__dirname + '/public/gpa.html'))
+})
+
 module.exports = app
