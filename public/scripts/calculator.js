@@ -19,7 +19,7 @@ function wAvg() {
 }
 
 function currentGrade() {
-  let grades = $('#grades').serializeArray()
+  let grades = $('#grades :input').serializeArray()
   let totalEarned = 0
   let totalPossible = 0
   grades.forEach((grade) => {
