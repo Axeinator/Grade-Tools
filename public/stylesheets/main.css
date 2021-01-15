@@ -20,10 +20,13 @@ h1 {
     margin-bottom: 30px;
 }
 
-h3 {
+h3, h4 {
     margin: 20px;
 }
 
 input {
     margin: 5px;
+}
+.btn-primary, .btn-secondary {
+    margin: 10px;
 }
