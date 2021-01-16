@@ -34,11 +34,36 @@ function currentGrade() {
   $('#currentGrade').text(`Your current grade is ${currentGrade.toFixed(2)}%`)
 }
 function gpa() {
-  let grades = $('#grades :input').serializeArray()
+  let gpSum = 0
+  let grades = $('#grades input').toArray()
   grades.forEach(grade => {
-    console.log(grade.dataset.num)
-    if (grade.name === 'grade') { // if it's a grade, not weight
+    let num = $(grade).data('num')
+    grade = grade.valueAsNumber
+    let weightElement = $(`select[data-num=${num}]`)
+    let weight = weightElement.val()
+    if (parseInt(weight) === 4) {
+      if (grade >= 90) {
+        gpSum += 4
+      } else if (grade >= 80 && grade < 90) {
+        gpSum += 3
+      } else if (grade >= 75 && grade < 80) {
+        gpSum += 2
+      } else if (grade >= 70 && grade < 75) {
+        gpSum += 1
+      }
+    }
+    else if (parseInt(weight) === 5) {
+      if (grade >= 90) {
+        gpSum += 5
+      } else if (grade >= 80 && grade < 90) {
+        gpSum += 4
+      } else if (grade >= 75 && grade < 80) {
+        gpSum += 3
+      } else if (grade >= 70 && grade < 75) {
+        gpSum += 2
+      }
     }
   })
+  console.log(gpSum)
 }
 
