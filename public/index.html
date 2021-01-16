@@ -37,9 +37,9 @@
     <div class="d-flex justify-content-center">
         <form name="grades">
             <label for="cWeight">Cycle Weight (decimal)</label><br>
-            <input class="form-control-lg" id="cWeight" name="grade" required value=0.3><br>
+            <input class="form-control-lg" id="cWeight" name="grade" required value=0.3 type="number"><br>
             <label for="fWeight">Final Exam Weight (decimal)</label><br>
-            <input class="form-control-lg" id="fWeight" name="grade" required value=0.1><br>
+            <input class="form-control-lg" id="fWeight" name="grade" required value=0.1 type="number"><br>
             <label for="c1">Cycle 1</label><br>
             <input class="form-control-lg" id="c1" name="grade" required type="number"><br>
             <label for="c2">Cycle 2</label><br>
@@ -72,9 +72,10 @@
         src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script>
   function validateAndCalc() {
+    event.preventDefault()
     if (isNaN(document.forms.grades.c1.value) || isNaN(document.forms.grades.c2.value) || isNaN(document.forms.grades.c3.value)) {
       return false;
-    } else if (isNaN(document.forms.cWeight) || isNaN(document.forms.fWeight)) {
+    } else if (isNaN(document.forms.grades.cWeight.value) || isNaN(document.forms.grades.fWeight.value)) {
       return false;
     }
     wAvg()
