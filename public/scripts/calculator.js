@@ -36,7 +36,11 @@ function currentGrade() {
 function gpa() {
   let gpSum = 0
   let grades = $('#grades input').toArray()
+  let gradesCount = 0
   grades.forEach(grade => {
+    if (grade.value) {
+      gradesCount++
+    }
     let num = $(grade).data('num')
     grade = grade.valueAsNumber
     let weightElement = $(`select[data-num=${num}]`)
@@ -65,5 +69,7 @@ function gpa() {
     }
   })
   console.log(gpSum)
+  console.log(gradesCount)
+  console.log(gpSum/gradesCount)
 }
 
