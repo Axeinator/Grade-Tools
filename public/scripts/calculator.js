@@ -33,7 +33,7 @@ function currentGrade() {
   let currentGrade = (totalEarned/totalPossible)*100
   $('#currentGrade').text(`Your current grade is ${currentGrade.toFixed(2)}%`)
 }
-function calcGpa(weighted) {
+function calcGpa() {
   let gpSum = 0
   let grades = $('#grades input').toArray()
   let gradesCount = 0
@@ -45,9 +45,6 @@ function calcGpa(weighted) {
     grade = grade.valueAsNumber
     let weightElement = $(`select[data-num=${num}]`)
     let weight = weightElement.val()
-    if (!weighted) {
-      weight = 4
-    }
     if (parseInt(weight) === 4) {
       if (grade >= 90) {
         gpSum += 4
@@ -72,11 +69,6 @@ function calcGpa(weighted) {
     }
   })
   let gpa = gpSum/gradesCount
-  if (weighted) {
-    $('#GPA').text(`Your weighted GPA is ${gpa.toFixed(2)}.`)
-  }
-  else {
-    $('#GPA').text(`Your unweighted GPA is ${gpa.toFixed(2)}.`)
-  }
+  $('#GPA').text(`Your weighted GPA is ${gpa.toFixed(2)}.`)
 }
 
