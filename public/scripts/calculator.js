@@ -33,7 +33,7 @@ function currentGrade() {
   let currentGrade = (totalEarned/totalPossible)*100
   $('#currentGrade').text(`Your current grade is ${currentGrade.toFixed(2)}%`)
 }
-function gpa() {
+function calcGpa() {
   let gpSum = 0
   let grades = $('#grades input').toArray()
   let gradesCount = 0
@@ -68,8 +68,7 @@ function gpa() {
       }
     }
   })
-  console.log(gpSum)
-  console.log(gradesCount)
-  console.log(gpSum/gradesCount)
+  let gpa = gpSum/gradesCount
+  $('#GPA').text(`Your weighted GPA is ${gpa.toFixed(2)}.`)
 }
 
