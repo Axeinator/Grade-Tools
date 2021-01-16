@@ -7,7 +7,7 @@
 .footer {
     position: relative;
     left: 0;
-    bottom: -10px;
+    bottom: -10vh;
     width: 100%;
     text-align: center;
 }
