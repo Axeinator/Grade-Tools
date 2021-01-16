@@ -7,14 +7,14 @@ function wAvg() {
   let fWeight = document.forms.grades.fWeight.valueAsNumber
   let required = ((goal - ((c1 * cWeight) + (c2 * cWeight) + (c3 * cWeight)))/fWeight)
   if (required < 0) {
-    document.getElementById('requiredScore').innerHTML = `Your required final exam score is 0%`
+    document.getElementById('requiredScore').innerHTML = `Your required final exam score is 0% to maintain a ${goal}%`
   }
   else if (required > 100) {
-    document.getElementById('requiredScore').innerHTML = `Your required final exam score is ${required.toFixed(2)}% <br/>
+    document.getElementById('requiredScore').innerHTML = `Your required final exam score is ${required.toFixed(2)}% to maintain a ${goal}% <br/>
     You probably can't get this.`
   }
   else {
-    document.getElementById('requiredScore').innerHTML = `Your required final exam score is ${required.toFixed(2)}%`
+    document.getElementById('requiredScore').innerHTML = `Your required final exam score is ${required.toFixed(2)}% to maintain a ${goal}%`
   }
 }
 
@@ -32,5 +32,13 @@ function currentGrade() {
   })
   let currentGrade = (totalEarned/totalPossible)*100
   $('#currentGrade').text(`Your current grade is ${currentGrade.toFixed(2)}%`)
+}
+function gpa() {
+  let grades = $('#grades :input').serializeArray()
+  grades.forEach(grade => {
+    console.log(grade.dataset.num)
+    if (grade.name === 'grade') { // if it's a grade, not weight
+    }
+  })
 }
 
